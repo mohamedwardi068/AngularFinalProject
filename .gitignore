@@ -1,0 +1,27 @@
+# General
+.DS_Store
+.vscode/
+.idea/
+*.log
+
+# Python / Backend
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+.pytest_cache/
+BackEnd/dataBase/db.json  # Optional: ignore DB if you don't want to commit user data
+BackEnd/data.json         # Ignore if this is also a data file
+
+# Node / Angular / Frontend
+node_modules/
+dist/
+.angular/
+.output/
+.cache/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
