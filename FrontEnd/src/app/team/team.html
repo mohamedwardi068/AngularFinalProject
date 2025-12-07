@@ -1,0 +1,19 @@
+<div class="team-container">
+    <h2>Teams</h2>
+
+    <div class="create-team">
+        <h3>Create Team</h3>
+        <input [(ngModel)]="newTeamName" placeholder="Team Name">
+        <button (click)="create()">Create</button>
+    </div>
+
+    <h3>Available Teams</h3>
+    <ul>
+        @for (t of teams; track t.id) {
+        <li>
+            <strong>{{ t.name }}</strong> ({{ t.members.length }} members)
+            <button (click)="join(t.id)">Join</button>
+        </li>
+        }
+    </ul>
+</div>

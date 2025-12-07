@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "mohamed",
+      "password_hash": "25c54911a6ae1f4c8c634bcf0ed8412ce6199f86505404c7d026d56105efc551",
+      "salt": "demahom"
+    },
+    {
+      "id": 2,
+      "username": "ahmed",
+      "password_hash": "12ec3a2a6a6e43ffb64ccede56363bfc307e62c6e2290e4e14aa1d93061cda5d",
+      "salt": "demha"
+    },
+    {
+      "id": 3,
+      "username": "admin",
+      "password_hash": "aada4d0fdb36c541ff1bc7da3a9d6cb7e88405a5b3dd2d1ccaefd58b6c21bea4",
+      "salt": "nimda"
+    }
+  ],
+  "teams": [
+    {
+      "id": 1,
+      "name": "mohamed",
+      "members": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "name": "hram ball fc",
+      "members": [
+        3
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "id": 1,
+      "user_id": 2,
+      "team_id": null,
+      "fixture_key": "PL:2025-12-07T14:00:00Z:Arsenal:Chelsea",
+      "competition": "PL",
+      "utcDate": "2025-12-07T14:00:00Z",
+      "home": "Arsenal",
+      "away": "Chelsea",
+      "predicted_home": 2,
+      "predicted_away": 1,
+      "created_at": "2025-12-07T16:07:49.341611"
+    }
+  ]
+}

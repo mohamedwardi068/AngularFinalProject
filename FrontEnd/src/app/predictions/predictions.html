@@ -1,0 +1,38 @@
+<div class="predictions-container">
+    <h2>My Predictions</h2>
+
+    <div class="prediction-form">
+        <h3>Add Prediction</h3>
+        <div class="form-row">
+            <select [(ngModel)]="competition">
+                <option value="PL">Premier League</option>
+                <option value="PD">La Liga</option>
+                <option value="bl1">Bundesliga</option>
+                <option value="SA">Serie A</option>
+                <option value="FL1">Ligue 1</option>
+                <option value="CL">Champions League</option>
+            </select>
+            <input type="date" [(ngModel)]="utcDate">
+        </div>
+        <div class="form-row">
+            <input [(ngModel)]="home" placeholder="Home Team">
+            <input [(ngModel)]="away" placeholder="Away Team">
+        </div>
+        <div class="form-row">
+            <input type="number" [(ngModel)]="predicted_home" placeholder="Home Score">
+            <input type="number" [(ngModel)]="predicted_away" placeholder="Away Score">
+        </div>
+        <button (click)="submit()">Submit</button>
+    </div>
+
+    <h3>History</h3>
+    <ul>
+        @for (p of myPredictions; track p.id) {
+        <li>
+            {{ p.utcDate | date }}:
+            <strong>{{ p.home }} vs {{ p.away }}</strong>
+            Predicted: {{ p.predicted_home }} - {{ p.predicted_away }}
+        </li>
+        }
+    </ul>
+</div>

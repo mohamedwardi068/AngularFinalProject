@@ -1,0 +1,31 @@
+<div class="dashboard-container">
+    <h1>Premier League Leaderboard</h1>
+    <table class="leaderboard-table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of leaderboard; track item.team_name) {
+            <tr>
+                <td>{{ $index + 1 }}</td>
+                <td>{{ item.team_name }}</td>
+                <td>{{ item.points }}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="actions">
+        <a routerLink="/predictions" class="btn">My Predictions</a>
+        <a routerLink="/teams" class="btn">Teams</a>
+        @if (auth.isAuthenticated()) {
+        <button (click)="auth.logout()" class="btn btn-danger">Logout</button>
+        } @else {
+        <a routerLink="/login" class="btn">Login</a>
+        }
+    </div>
+</div>
