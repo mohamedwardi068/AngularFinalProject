@@ -1,0 +1,28 @@
+<div class="matches-container">
+    <h2>Available Matches</h2>
+
+    <div class="filters">
+        <button *ngFor="let comp of competitions" (click)="onCompChange(comp.code)"
+            [class.active]="competition === comp.code">
+            {{ comp.name }}
+        </button>
+    </div>
+
+    <div *ngIf="!matches || matches.length === 0">Loading matches or no matches found...</div>
+
+    <div class="match-list" *ngIf="matches && matches.length > 0">
+        <div class="match-card" *ngFor="let match of matches">
+            <div class="match-info">
+                <span class="date">{{ match.utcDate | date:'medium' }}</span>
+                <div class="teams">
+                    <!-- Some matches might not have homeTeam/awayTeam objects if structure differs, strictly following standard API -->
+                    <span class="home">{{ match.homeTeam?.name || match.homeTeam }}</span>
+                    <span class="vs">vs</span>
+                    <span class="away">{{ match.awayTeam?.name || match.awayTeam }}</span>
+                </div>
+                <span class="status">{{ match.status }}</span>
+            </div>
+            <button class="predict-btn" (click)="predict(match)">Predict</button>
+        </div>
+    </div>
+</div>

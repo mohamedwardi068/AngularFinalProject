@@ -39,4 +39,8 @@ export class ApiService {
   joinTeam(team_id: number): Observable<any> {
     return this.http.post(`${this.apiUrl}/teams/join`, { team_id }, { headers: this.getHeaders() });
   }
+
+  getMatches(comp: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/matches/${comp}`);
+  }
 }

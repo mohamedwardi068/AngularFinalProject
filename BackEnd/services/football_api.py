@@ -7,9 +7,14 @@ HEADERS = {
     "X-Auth-Token": API_KEY
 }
 
-def get_matches(competition_code):
+def get_matches(competition_code, date_from=None, date_to=None):
     url = f"{BASE_URL}/competitions/{competition_code}/matches"
-    resp = requests.get(url, headers=HEADERS)
+    params = {}
+    if date_from and date_to:
+        params["dateFrom"] = date_from
+        params["dateTo"] = date_to
+    
+    resp = requests.get(url, headers=HEADERS, params=params)
     return resp.json()
 
 def get_standings(competition_code):

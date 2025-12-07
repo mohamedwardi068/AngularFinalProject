@@ -6,7 +6,7 @@ from storage import read_data, write_data
 from auth_utils import hash_password, verify_password, create_access_token, decode_token
 from predictions_logic import fixture_key, compute_prediction_points, iso_to_date
 from services.football_api import get_matches
-from datetime import datetime
+from datetime import datetime, timedelta
 
 app = FastAPI(title="Football Predictions API")
 
@@ -66,6 +66,11 @@ def create_team(payload: TeamCreate, current=Depends(get_current_user)):
     if current is None:
         raise HTTPException(401, "Unauthorized")
     data = read_data()
+    # Check if user is already in a team
+    for t in data["teams"]:
+        if current["id"] in t["members"]:
+             raise HTTPException(400, "User is already in a team")
+
     tid = _next_id(data["teams"])
     team = {"id": tid, "name": payload.name, "members": [current["id"]]}
     data["teams"].append(team)
@@ -77,6 +82,12 @@ def join_team(payload: JoinTeamIn, current=Depends(get_current_user)):
     if current is None:
         raise HTTPException(401, "Unauthorized")
     data = read_data()
+    
+    # Check if user is already in a team
+    for t in data["teams"]:
+        if current["id"] in t["members"]:
+             raise HTTPException(400, "User is already in a team")
+
     team = next((t for t in data["teams"] if t["id"] == payload.team_id), None)
     if not team:
         raise HTTPException(404, "team not found")
@@ -89,13 +100,30 @@ def join_team(payload: JoinTeamIn, current=Depends(get_current_user)):
 @app.get("/teams")
 def list_teams():
     data = read_data()
-    return data["teams"]
+    # Enrich members with usernames
+    res = []
+    for t in data["teams"]:
+        members_rich = []
+        for uid in t["members"]:
+             user = next((u for u in data["users"] if u["id"] == uid), None)
+             if user:
+                 members_rich.append({"id": uid, "username": user["username"]})
+        res.append({"id": t["id"], "name": t["name"], "members": members_rich})
+    return res
 
 # -------- Matches ----------
 @app.get("/matches/{comp_code}")
 def matches(comp_code: str):
+    # Filter: Today -> Today + 7 days
+    today = datetime.now().date()
+    date_to = (today + timedelta(days=7))
+    
+    # API requires YYYY-MM-DD
+    d_from = today.isoformat()
+    d_to = date_to.isoformat()
+
     # We could cache this or just proxy for now
-    data = get_matches(comp_code)
+    data = get_matches(comp_code, date_from=d_from, date_to=d_to)
     # data has "matches": [...]
     return data.get("matches", [])
 

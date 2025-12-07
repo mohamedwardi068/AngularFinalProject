@@ -17,6 +17,12 @@
       "username": "admin",
       "password_hash": "aada4d0fdb36c541ff1bc7da3a9d6cb7e88405a5b3dd2d1ccaefd58b6c21bea4",
       "salt": "nimda"
+    },
+    {
+      "id": 4,
+      "username": "za3bata",
+      "password_hash": "8865be4921e268b7234d0e0efc569eaa0228093209a4b48628a63fd70db02618",
+      "salt": "atab3az"
     }
   ],
   "teams": [
@@ -34,6 +40,13 @@
       "members": [
         3
       ]
+    },
+    {
+      "id": 3,
+      "name": "halal Ball fc",
+      "members": [
+        4
+      ]
     }
   ],
   "predictions": [
@@ -49,6 +62,71 @@
       "predicted_home": 2,
       "predicted_away": 1,
       "created_at": "2025-12-07T16:07:49.341611"
+    },
+    {
+      "id": 2,
+      "user_id": 3,
+      "team_id": null,
+      "fixture_key": "PL:537929",
+      "competition": "PL",
+      "utcDate": "2025-12-07",
+      "home": "Fulham FC",
+      "away": "Crystal Palace FC",
+      "predicted_home": 1,
+      "predicted_away": 3,
+      "created_at": "2025-12-07T17:04:13.571519"
+    },
+    {
+      "id": 3,
+      "user_id": 3,
+      "team_id": null,
+      "fixture_key": "PD:544356",
+      "competition": "PD",
+      "utcDate": "2025-12-07",
+      "home": "Real Madrid CF",
+      "away": "RC Celta de Vigo",
+      "predicted_home": 3,
+      "predicted_away": 0,
+      "created_at": "2025-12-07T17:04:44.494298"
+    },
+    {
+      "id": 4,
+      "user_id": 3,
+      "team_id": null,
+      "fixture_key": "SA:536952",
+      "competition": "SA",
+      "utcDate": "2025-12-07",
+      "home": "SSC Napoli",
+      "away": "Juventus FC",
+      "predicted_home": 1,
+      "predicted_away": 1,
+      "created_at": "2025-12-07T17:05:42.895533"
+    },
+    {
+      "id": 5,
+      "user_id": 4,
+      "team_id": null,
+      "fixture_key": "PL:537929",
+      "competition": "PL",
+      "utcDate": "2025-12-07",
+      "home": "Fulham FC",
+      "away": "Crystal Palace FC",
+      "predicted_home": 0,
+      "predicted_away": 0,
+      "created_at": "2025-12-07T17:07:08.492767"
+    },
+    {
+      "id": 6,
+      "user_id": 4,
+      "team_id": null,
+      "fixture_key": "bl1:540514",
+      "competition": "bl1",
+      "utcDate": "2025-12-07",
+      "home": "Borussia Dortmund",
+      "away": "TSG 1899 Hoffenheim",
+      "predicted_home": 3,
+      "predicted_away": 1,
+      "created_at": "2025-12-07T17:07:59.941639"
     }
   ]
 }

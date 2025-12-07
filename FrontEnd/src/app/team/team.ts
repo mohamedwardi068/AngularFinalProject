@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
+import { AuthService } from '../services/auth.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -11,7 +12,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class Team implements OnInit {
   api = inject(ApiService);
+  auth = inject(AuthService); // Inject Auth
   teams: any[] = [];
+  myTeam: any = null;
   newTeamName = '';
 
   ngOnInit() {
@@ -19,7 +22,13 @@ export class Team implements OnInit {
   }
 
   refresh() {
-    this.api.getTeams().subscribe(res => this.teams = res);
+    const uid = this.auth.getUserId();
+    this.api.getTeams().subscribe(res => {
+      this.teams = res;
+      if (uid) {
+        this.myTeam = this.teams.find(t => t.members.some((m: any) => m.id === uid));
+      }
+    });
   }
 
   create() {
@@ -28,7 +37,7 @@ export class Team implements OnInit {
         alert('Team created');
         this.refresh();
       },
-      error: () => alert('Failed to create team')
+      error: (err) => alert(err.error.detail || 'Failed to create team')
     });
   }
 
@@ -39,7 +48,7 @@ export class Team implements OnInit {
         else alert('Joined team');
         this.refresh();
       },
-      error: () => alert('Failed to join')
+      error: (err) => alert(err.error.detail || 'Failed to join')
     });
   }
 }

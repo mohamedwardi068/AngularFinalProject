@@ -1,5 +1,18 @@
 <div class="dashboard-container">
-    <h1>Premier League Leaderboard</h1>
+    <h1>Leaderboard</h1>
+
+    <div class="rules-card">
+        <h3>Scoring Rules</h3>
+        <div class="rule-item">
+            <span class="points">+5 Pts</span>
+            <span class="desc">Exact Score (e.g. Predicted 2-1, Result 2-1)</span>
+        </div>
+        <div class="rule-item">
+            <span class="points">+3 Pts</span>
+            <span class="desc">Correct Result (e.g. Predicted Win, Result Win)</span>
+        </div>
+    </div>
+
     <table class="leaderboard-table">
         <thead>
             <tr>
@@ -18,14 +31,4 @@
             }
         </tbody>
     </table>
-
-    <div class="actions">
-        <a routerLink="/predictions" class="btn">My Predictions</a>
-        <a routerLink="/teams" class="btn">Teams</a>
-        @if (auth.isAuthenticated()) {
-        <button (click)="auth.logout()" class="btn btn-danger">Logout</button>
-        } @else {
-        <a routerLink="/login" class="btn">Login</a>
-        }
-    </div>
 </div>

@@ -1,19 +1,48 @@
 <div class="team-container">
     <h2>Teams</h2>
 
+    <!-- VIEW 1: USER IS IN A TEAM -->
+    @if (myTeam) {
+    <div class="my-team-card">
+        <h3>Your Team: {{ myTeam.name }}</h3>
+        <h4>Members</h4>
+        <ul class="members-list">
+            @for (member of myTeam.members; track member.id) {
+            <li>
+                <span class="user-icon">👤</span>
+                {{ member.username }}
+                @if (member.id === auth.getUserId()) { (You) }
+            </li>
+            }
+        </ul>
+    </div>
+    }
+
+    <!-- VIEW 2: USER IS NOT IN A TEAM -->
+    @else {
     <div class="create-team">
-        <h3>Create Team</h3>
-        <input [(ngModel)]="newTeamName" placeholder="Team Name">
-        <button (click)="create()">Create</button>
+        <h3>Create a New Team</h3>
+        <div class="form-group">
+            <input [(ngModel)]="newTeamName" placeholder="Enter Team Name">
+            <button (click)="create()" [disabled]="!newTeamName.trim()">Create Team</button>
+        </div>
     </div>
 
-    <h3>Available Teams</h3>
-    <ul>
+    <h3>Join an Existing Team</h3>
+    @if (teams.length === 0) {
+    <p>No teams available. Be the first to create one!</p>
+    }
+    <ul class="team-list">
         @for (t of teams; track t.id) {
-        <li>
-            <strong>{{ t.name }}</strong> ({{ t.members.length }} members)
-            <button (click)="join(t.id)">Join</button>
+        <!-- Don't show the user's own team in the join list logic if we were listing all, but here we are in the 'else' block so user has no team -->
+        <li class="team-item">
+            <div class="team-info">
+                <strong>{{ t.name }}</strong>
+                <span class="member-count">{{ t.members.length }} members</span>
+            </div>
+            <button class="join-btn" (click)="join(t.id)">Join</button>
         </li>
         }
     </ul>
+    }
 </div>

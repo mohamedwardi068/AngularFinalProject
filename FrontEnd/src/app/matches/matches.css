@@ -1,0 +1,71 @@
+.matches-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filters button {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.filters button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.match-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.match-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.match-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.teams {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.vs {
+    margin: 0 10px;
+    color: #888;
+}
+
+.predict-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.predict-btn:hover {
+    background-color: #0056b3;
+}
