@@ -28,7 +28,7 @@
   "teams": [
     {
       "id": 1,
-      "name": "mohamed",
+      "name": "Barca fc",
       "members": [
         1,
         2
@@ -127,6 +127,149 @@
       "predicted_home": 3,
       "predicted_away": 1,
       "created_at": "2025-12-07T17:07:59.941639"
+    },
+    {
+      "id": 7,
+      "user_id": 4,
+      "team_id": null,
+      "fixture_key": "CL:551953",
+      "competition": "CL",
+      "utcDate": "2025-12-09",
+      "home": "FC Barcelona",
+      "away": "Eintracht Frankfurt",
+      "predicted_home": 3,
+      "predicted_away": 1,
+      "created_at": "2025-12-09T21:03:30.794586"
+    },
+    {
+      "id": 8,
+      "user_id": 4,
+      "team_id": null,
+      "fixture_key": "CL:552008",
+      "competition": "CL",
+      "utcDate": "2025-12-09",
+      "home": "PSV",
+      "away": "Club Atl\u00e9tico de Madrid",
+      "predicted_home": 1,
+      "predicted_away": 1,
+      "created_at": "2025-12-09T21:04:06.868463"
+    },
+    {
+      "id": 9,
+      "user_id": 4,
+      "team_id": null,
+      "fixture_key": "CL:551969",
+      "competition": "CL",
+      "utcDate": "2025-12-10",
+      "home": "Athletic Club",
+      "away": "Paris Saint-Germain FC",
+      "predicted_home": 0,
+      "predicted_away": 4,
+      "created_at": "2025-12-09T21:04:31.710001"
+    },
+    {
+      "id": 10,
+      "user_id": 4,
+      "team_id": null,
+      "fixture_key": "CL:552019",
+      "competition": "CL",
+      "utcDate": "2025-12-09",
+      "home": "Tottenham Hotspur FC",
+      "away": "SK Slavia Praha",
+      "predicted_home": 3,
+      "predicted_away": 0,
+      "created_at": "2025-12-09T21:05:11.658154"
+    },
+    {
+      "id": 11,
+      "user_id": 1,
+      "team_id": null,
+      "fixture_key": "CL:551953",
+      "competition": "CL",
+      "utcDate": "2025-12-09",
+      "home": "FC Barcelona",
+      "away": "Eintracht Frankfurt",
+      "predicted_home": 4,
+      "predicted_away": 2,
+      "created_at": "2025-12-09T21:06:13.574784"
+    },
+    {
+      "id": 12,
+      "user_id": 1,
+      "team_id": null,
+      "fixture_key": "CL:552008",
+      "competition": "CL",
+      "utcDate": "2025-12-09",
+      "home": "PSV",
+      "away": "Club Atl\u00e9tico de Madrid",
+      "predicted_home": 1,
+      "predicted_away": 3,
+      "created_at": "2025-12-09T21:06:31.500548"
+    },
+    {
+      "id": 13,
+      "user_id": 1,
+      "team_id": null,
+      "fixture_key": "CL:552019",
+      "competition": "CL",
+      "utcDate": "2025-12-09",
+      "home": "Tottenham Hotspur FC",
+      "away": "SK Slavia Praha",
+      "predicted_home": 2,
+      "predicted_away": 0,
+      "created_at": "2025-12-09T21:06:44.071766"
+    },
+    {
+      "id": 14,
+      "user_id": 1,
+      "team_id": null,
+      "fixture_key": "CL:551931",
+      "competition": "CL",
+      "utcDate": "2025-12-09",
+      "home": "FC Internazionale Milano",
+      "away": "Liverpool FC",
+      "predicted_home": 2,
+      "predicted_away": 1,
+      "created_at": "2025-12-09T21:07:32.637738"
+    },
+    {
+      "id": 15,
+      "user_id": 3,
+      "team_id": null,
+      "fixture_key": "CL:551912",
+      "competition": "CL",
+      "utcDate": "2025-12-09",
+      "home": "FC Bayern M\u00fcnchen",
+      "away": "Sporting Clube de Portugal",
+      "predicted_home": 3,
+      "predicted_away": 1,
+      "created_at": "2025-12-09T21:08:30.933526"
+    },
+    {
+      "id": 16,
+      "user_id": 1,
+      "team_id": null,
+      "fixture_key": "CL:551953",
+      "competition": "CL",
+      "utcDate": "2025-12-09",
+      "home": "FC Barcelona",
+      "away": "Eintracht Frankfurt",
+      "predicted_home": 3,
+      "predicted_away": 1,
+      "created_at": "2025-12-09T21:09:33.965530"
+    },
+    {
+      "id": 17,
+      "user_id": 1,
+      "team_id": null,
+      "fixture_key": "CL:551912",
+      "competition": "CL",
+      "utcDate": "2025-12-09",
+      "home": "FC Bayern M\u00fcnchen",
+      "away": "Sporting Clube de Portugal",
+      "predicted_home": 3,
+      "predicted_away": 1,
+      "created_at": "2025-12-09T21:10:05.783193"
     }
   ]
 }
