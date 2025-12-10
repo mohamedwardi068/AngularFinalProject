@@ -184,7 +184,10 @@ def leaderboard():
     for comp in competitions:
         try:
             resp = get_matches(comp)
-        except Exception:
+        except Exception as e:
+            print(f"Error fetching matches for {comp}: {e}")
+            import traceback
+            traceback.print_exc()
             resp = {}
         matches = resp.get("matches", []) if isinstance(resp, dict) else []
         for m in matches:
